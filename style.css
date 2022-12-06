@@ -49,32 +49,33 @@ h1{
     background-color: var(--cor3);
     text-align: center;
     padding: 8px;
-    margin: 10px 0px 0px 0px;
+    margin:10px 0px 0px 0px;
     border-radius: 10px 10px 0 0;
+}
+
+.valores{
+    padding: 0px;
+    
+
 }
 
 /* Criar div rigth and left para alinhamento de conteudo lado a lado*/
 
 .left {
-    width: 49%;
-    margin-left: 6.5px;
+    width: 350px;
+    height: 100px;
     display: inline-block;
-    background-color: red;
-    text-align: center;
-    padding: 5vw 0vw 5vw 0vw;
-    min-width:30vw;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .right {
-    width: 49%;
-    background-color: green;
-    display: inline-block;
-    margin-right: 6.5px;
-    text-align: center;
-    padding: 5vw 0vw 5vw 0vw;
-    min-width:30vw;
-    float:right;
-    
+    width: 100px;
+    height: 100px;
+    display: inline-block;  
+    align-items: center;
+    justify-content: center;   
 }
 
 h2{
@@ -88,14 +89,33 @@ h2{
     background-color: var(--cor6);
     text-align: center;
 
-
 }
 
 #lista{
-    margin: 5px;
+    margin: 3px;
     width: 100px;
     height: 20px;
     
+}
+
+select{
+    margin: 5px;
+    width: 100px;
+    height: 20px;
+
+}
+
+#calcular{
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    background: var(--cor2);
+    border: var(--cor2); 
+
+}
+
+#calcular:hover{
+    background:var(--cor3)
 }
 
 
