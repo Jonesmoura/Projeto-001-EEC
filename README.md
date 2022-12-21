@@ -5,6 +5,9 @@
 
  A idéia é utililizar HTML5,CSS3 e JavaScript para desenvolvimento de um conversor de unidades para Engenharia Civil
 
- Etapa Atual:
+ :construction: Em Desenvolvimento:construction: 
 
- Criar lista de unidades para conversão, ao lado dos inputs num1 e num2
+
+ Etapa Atual:
+ 
+ - Criar lista de unidades para conversão, ao lado dos inputs num1 e num2
