@@ -7,6 +7,8 @@
 
  :construction: Em Desenvolvimento:construction: 
 
+ Um dos objetivos deste projeto é entender melhor o processo de controle de versionamento de códigos
+
 
  Etapa Atual:
  
