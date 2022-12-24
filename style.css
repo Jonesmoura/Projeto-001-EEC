@@ -24,6 +24,12 @@
 
 }
 
+body{
+    
+    background-image: linear-gradient(to left, var(--cor1), var(--cor2)) ;
+
+}
+
 .container {
 
     background: rgb(238, 238, 238);
@@ -32,50 +38,40 @@
     border-radius: 10px;
     margin: auto;
     box-shadow: #0d0d0d31 8px 6px 13px;
-
-
 }
 
-body{
-    
-    background-image: linear-gradient(to left, var(--cor1), var(--cor2)) ;
-    
 
+/* Criar div rigth and left para alinhamento de conteudo lado a lado*/
 
+.left {
+    width: 50%;
+    display: block;
+    margin:auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    outline: auto;
 }
+
+.right {
+
+    display: block;  
+    margin: auto; 
+
+    text-align: center;
+}
+
 
 h1{
     color: white;
     background-color: var(--cor3);
     text-align: center;
-    padding: 8px;
     margin:10px 0px 0px 0px;
     border-radius: 10px 10px 0 0;
-}
+} 
 
 .valores{
     padding: 0px;
-    
-
-}
-
-/* Criar div rigth and left para alinhamento de conteudo lado a lado*/
-
-.left {
-    width: 350px;
-    height: 100px;
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.right {
-    width: 100px;
-    height: 100px;
-    display: inline-block;  
-    align-items: center;
-    justify-content: center;   
+    margin: 0px;
 }
 
 h2{
@@ -105,7 +101,7 @@ select{
 
 }
 
-#calcular{
+#btn-calcular{
     width: 100px;
     height: 40px;
     border-radius: 3px;
@@ -114,9 +110,6 @@ select{
 
 }
 
-#calcular:hover{
+#btn-calcular:hover{
     background:var(--cor3)
 }
-
-
-
