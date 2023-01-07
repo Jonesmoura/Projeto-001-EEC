@@ -12,40 +12,31 @@
         <h1>Easy Engeneering Converter</h1>
         <div class="conversao">
             <h2>Selecione a grandeza:</h2>
-            <select name="lista" id="lista">
-                <option value="Massa">Massa</option>
-                <option value="Velocidade">Velocidade</option>
-                <option value="Força">Força</option>
-
-
-
+            <select name="grandeza" id="grandeza" onclick="atualizarLista()">
             </select>
             
         </div>
 
         <div class="left">
             <div class="valores">
-                <p><select name="ListaEntrada" id="">
+                <p><select name="ListaEntrada" class="listaUn1" onclick="atualizarUnidades (listaUn)">
                 </select>
             
-                <input type="number" name="num1" id="num1" placeholder="Valor de Entrada"></p>
+                <input type="number" name="num1" id="valorEntrada" placeholder="Valor de Entrada"></p>
             
-                <p><select name="ListaSaida" id="">
+                <p><select name="ListaSaida" class="listaUn2" onclick="atualizarUnidades (listaUn2)">
                 </select>
             
-                <input type="number" name="num1" id="num1" placeholder="Valor de Saída"></p>
+                <input type="number" name="num1" id="valorSaida" placeholder="Valor de Saída"></p>
             </div>
         </div>
 
         <div class="right">
-            <button id="btn-calcular">CALCULAR</button>
+            <button id="btn-calcular" onclick="calcular ()">CALCULAR</button>
             
             
 
     </div>      
-
-
-
 
     <script src="script.js"></script>
     
