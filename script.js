@@ -175,10 +175,16 @@ function atualizarUnidades(lista) {
 
 function calcular() {
 
+    if(listaUn.value !== listaUn2.value){
+
     let eleObjTaxa = String(listaUn.value + listaUn2.value)
     let valorEntrada = document.querySelector('#valorEntrada')
     let valorSaida = document.querySelector('#valorSaida')
     resultado = (taxasDeConversao[eleObjTaxa] * valorEntrada.value).toFixed(5)
     valorSaida.value = resultado
+
+    } else{
+        alert('Selecionar unidades diferentes para realizar a conversão.')
+    }
 
 }

@@ -70,8 +70,8 @@ h1{
 } 
 
 .valores{
-    padding: 0px;
-    margin: 0px;
+    /* padding: 0px;
+    margin: 0px; */
 }
 
 h2{
@@ -112,4 +112,39 @@ select{
 
 #btn-calcular:hover{
     background:var(--cor3)
+}
+
+/* media query - teste em celulares */
+
+@media screen and (max-width:480px){
+
+    .container, .conversao, .right {
+
+        width: auto;
+        text-align: center;
+        
+    }
+
+    .valores, .left{
+
+        width: 95%;
+        text-align: center;
+    }
+
+    h1{
+        
+        color: white;
+        background-color: var(--cor3);
+        text-align: center;
+        margin:0px 0px 0px 0px;
+        border-radius: 0px;
+        
+    }
+
+    .container{
+
+        height: 100vh;
+
+    }
+
 }
