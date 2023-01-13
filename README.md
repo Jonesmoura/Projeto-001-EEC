@@ -10,9 +10,10 @@
  Um dos objetivos deste projeto é entender melhor o processo de controle de versionamento de códigos
 
 
- Etapa Atual:
+ Próximos passos:
  
- - tratamento do erro de selecionar duas unidades iguais
+ - tratamentos para responsividade
+ - inserção de referências e conteúdos referentes as unidades que estão sendo convertidas
  
 
 
