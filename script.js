@@ -107,10 +107,7 @@ let listaUn2 = document.querySelector('.listaUn2')
 
 function atualizarLista() {
 
-    listaUn.value = ""
-    listaUn.innerHTML = ""
-    listaUn2.value = ""
-    listaUn2.innerHTML = ""
+
 
     if (listaGrandeza.length === 0) {
 
@@ -122,10 +119,24 @@ function atualizarLista() {
             itemNaListaGrandeza.innerHTML = `${addGrandeza}`
             itemNaListaGrandeza.value = `${addGrandeza}`
             listaGrandeza.appendChild(itemNaListaGrandeza)
+
         }
+
+        listaGrandeza.value =''
+
     }
 
 }
+
+function limparUn (){
+
+    listaUn.value = ""
+    listaUn.innerHTML = ""
+    listaUn2.value = ""
+    listaUn2.innerHTML = ""
+}
+
+atualizarLista()
 
 function addItensGrandeza(grandeza, lista) {
 
@@ -139,8 +150,13 @@ function addItensGrandeza(grandeza, lista) {
         addLista.innerHTML = `${addUn}`
         addLista.value = `${addUn}`
         lista.appendChild(addLista)
+        
 
     }
+
+    // a atribuição abaixo foi feita para que apos a criação da lista não tenhamos nenhum select pre selecionado
+
+    lista.value = ''
 
 }
 
@@ -165,7 +181,7 @@ function atualizarUnidades(lista) {
 
             addItensGrandeza(força, lista)
 
-        } else {
+        } else if(listaGrandeza.value == 'comprimento'){
 
             addItensGrandeza(comprimento, lista)
 
