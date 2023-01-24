@@ -62,15 +62,15 @@ const taxasDeConversao = {
 
     //comprimento
 
-    'metromm': 0.001,
-    'metrocm': 0.01,
+    'metromm': 1000,
+    'metrocm': 100,
     'metrokm': 0.001,
     'metropol': 39.3701,
-    'mmmetro': 1000,
+    'mmmetro': 0.001,
     'mmcm': 0.1,
     'mmkm': 0.000001,
     'mmpol': 0.0393701,
-    'cmmetro': 0.10,
+    'cmmetro': 0.010,
     'cmmm': 10,
     'cmkm': 0.00001,
     'cmpol': 0.393701,
