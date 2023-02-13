@@ -12,8 +12,8 @@
 
  Próximos passos:
  
- - tratamentos para responsividade
- - inserção de referências e conteúdos referentes as unidades que estão sendo convertidas
+ - Calculo de consumo de materiais
+ - Inserção de tabela de peso específico de alguns materiais utilizados na construção civil
  
 
 
