@@ -16,13 +16,14 @@
             <a href="tabela.html">Tabela Peso Específico</a>
         </nav>
         <div class="conversao">
-            <h2>Selecione a grandeza:</h2>
-            <select name="grandeza" id="grandeza" onclick="limparUn ();atualizarUnidades (listaUn);atualizarUnidades (listaUn2)">
+            <h2>Escolher material:</h2>
+            <select name="grandeza" id="grandeza" onchange="attFormulario()">
             </select>
+            
         </div>
 
         <div class="dadosEntrada">
-            <div class="valores">
+            <div class="concreto hide">
                 <p><select name="ListaEntrada" class="listaUn1" onclick="atualizarUnidades (listaUn)">
                 </select>
             
@@ -33,18 +34,51 @@
             
                 <input type="number" name="num1" id="valorSaida" placeholder="Valor de Saída"></p>
             </div>
+
+            <div class="argamassa hide">
+                <!-- <p><select name="ListaEntrada" class="listaUn1" onclick="atualizarUnidades (listaUn)">
+                </select>
+            
+                <input type="number" name="num1" id="valorEntrada" placeholder="Valor de Entrada"></p>
+            
+                <p><select name="ListaSaida" class="listaUn2" onclick="atualizarUnidades (listaUn2)">
+                </select>
+            
+                <input type="number" name="num1" id="valorSaida" placeholder="Valor de Saída"></p> -->
+
+                <p>teste argamassa</p>
+            </div>
+
+            <div class="nivelador_piso hide">
+
+                <p>nivelador_piso</p>
+
+            </div>
+
+            <div class="tinta hide">
+
+                <p>tinta</p>
+
+            </div>
+
+            <div class="massa_Corrida hide">
+
+                <p>massa_Corrida</p>
+
+            </div>
+
+
         </div>
 
         <div class="ContainerBotoes">
 
             <button id="btn" onclick="calcular ()">CALCULAR</button>
-            <button id="btn-clear" onclick="limparDados ()">LIMPAR</button>
             
         </div>
 
     </div>      
 
-    <script src="script.js"></script>
+    <script src="consumo.js"></script>
     
 </body>
 </html>

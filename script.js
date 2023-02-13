@@ -1,4 +1,4 @@
-let grandeza = [
+const grandeza = [
     'massa',
     'velocidade',
     'força',
@@ -6,23 +6,23 @@ let grandeza = [
     'pressao',
 ]
 
-let massa = [
+const massa = [
     'kg',
     'g',
     'T'
 ]
 
-let velocidade = [
+const velocidade = [
     'km/h',
     'm/s',
 ]
 
-let força = [
+const força = [
     'kgf',
     'N',
 ]
 
-let comprimento = [
+const comprimento = [
     'metro',
     'mm',
     'cm',
@@ -30,7 +30,7 @@ let comprimento = [
     'pol'
 ]
 
-let pressao = [
+const pressao = [
     'Mpa',
     'Kpa',
     'M.c.a',
@@ -90,7 +90,7 @@ const taxasDeConversao = {
     'Mpakgf/cm2': 10.1972,
     'KpaMpa': 0.001,
     'KpaM.c.a': 0.10197,
-    'KpaKgf/cm2': 0.0101972,
+    'Kpakgf/cm2': 0.0101972,
     'M.c.aMpa': 0.00980638,
     'M.c.aKpa': 9.80638,
     'M.c.aKgf/cm2': 0.1,
@@ -100,18 +100,16 @@ const taxasDeConversao = {
 
 }
 
-let listaGrandeza = document.querySelector("#grandeza")
-let listaUn = document.querySelector('.listaUn1')
-let listaUn2 = document.querySelector('.listaUn2')
+const listaGrandeza = document.querySelector("#grandeza")
+const listaUn = document.querySelector('.listaUn1')
+const listaUn2 = document.querySelector('.listaUn2')
+const valorEntrada = document.querySelector('#valorEntrada')
+const valorSaida = document.querySelector('#valorSaida')
 
 
 function atualizarLista() {
 
-
-
     if (listaGrandeza.length === 0) {
-
-
 
         for (i = 0; i < grandeza.length; i++) {
             let addGrandeza = grandeza[i]
@@ -151,17 +149,13 @@ function addItensGrandeza(grandeza, lista) {
         addLista.value = `${addUn}`
         lista.appendChild(addLista)
         
-
     }
-
     // a atribuição abaixo foi feita para que apos a criação da lista não tenhamos nenhum select pre selecionado
-
     lista.value = ''
 
 }
 
 function atualizarUnidades(lista) {
-
 
     if (lista.length === 0) {
 
@@ -194,13 +188,23 @@ function calcular() {
     if(listaUn.value !== listaUn2.value){
 
     let eleObjTaxa = String(listaUn.value + listaUn2.value)
-    let valorEntrada = document.querySelector('#valorEntrada')
-    let valorSaida = document.querySelector('#valorSaida')
     resultado = (taxasDeConversao[eleObjTaxa] * valorEntrada.value).toFixed(5)
     valorSaida.value = resultado
 
     } else{
         alert('Selecionar unidades diferentes para realizar a conversão.')
     }
+
+}
+
+function limparDados (){
+
+    limparUn()
+
+    listaGrandeza.value =''
+    valorEntrada.value = ''
+    valorSaida.value=''
+
+
 
 }

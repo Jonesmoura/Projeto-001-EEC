@@ -14,14 +14,17 @@
             <a href="index.html">Conversor de Unidades</a>
             <a href="Consumo.html">Consumo de Materiais</a>
             <a href="tabela.html">Tabela Peso Específico</a>
+
+
         </nav>
         <div class="conversao">
             <h2>Selecione a grandeza:</h2>
             <select name="grandeza" id="grandeza" onclick="limparUn ();atualizarUnidades (listaUn);atualizarUnidades (listaUn2)">
             </select>
+            
         </div>
 
-        <div class="dadosEntrada">
+        <div class="left">
             <div class="valores">
                 <p><select name="ListaEntrada" class="listaUn1" onclick="atualizarUnidades (listaUn)">
                 </select>
@@ -35,10 +38,9 @@
             </div>
         </div>
 
-        <div class="ContainerBotoes">
+        <div class="right">
 
-            <button id="btn" onclick="calcular ()">CALCULAR</button>
-            <button id="btn-clear" onclick="limparDados ()">LIMPAR</button>
+            <button id="btn-calcular" onclick="calcular ()">CALCULAR</button>
             
         </div>
 

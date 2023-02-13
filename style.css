@@ -38,12 +38,40 @@ body{
     border-radius: 10px;
     margin: auto;
     box-shadow: #0d0d0d31 8px 6px 13px;
+
+}
+
+nav{
+
+    text-align: center;
+    padding: 5px;
+
+}
+
+nav > a {
+
+    text-decoration: none;
+    color: var(--cor3);
+    font-weight: bold;
+    margin: 10px;
+    padding:3px ;
+    border-radius: 5px;
+    background-color: var(--cor2);
+
+}
+
+nav > a:hover {
+
+    text-decoration: underline;
+    color: white;
+    background-color: var(--cor3);
+
 }
 
 
 /* Criar div rigth and left para alinhamento de conteudo lado a lado*/
 
-.left {
+.dadosEntrada {
     width: 50%;
     display: block;
     margin:auto;
@@ -52,7 +80,7 @@ body{
     outline: auto;
 }
 
-.right {
+.ContainerBotoes {
 
     display: block;  
     margin: auto; 
@@ -96,7 +124,7 @@ select{
 
 }
 
-#btn-calcular{
+#btn{
     width: 100px;
     height: 40px;
     border-radius: 3px;
@@ -105,22 +133,49 @@ select{
 
 }
 
-#btn-calcular:hover{
+#btn-clear{
+
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    background: rgb(235, 181, 181);
+    border: var(--cor2); 
+
+
+}
+
+#btn-clear:hover{
+
+    background: rgb(223, 125, 125);
+
+}
+
+#btn:hover{
     background:var(--cor3)
 }
+
+/* Seletores para hide/unHide de elementos */
+
+.hide{
+
+    display: none;
+    background-color: pink;
+
+}
+
 
 /* media query - teste em celulares */
 
 @media screen and (max-width:480px){
 
-    .container, .conversao, .right {
+    .container, .conversao, .ContainerBotoes {
 
         width: auto;
         text-align: center;
         
     }
 
-    .valores, .left{
+    .valores, .dadosEntrada{
 
         width: 95%;
         text-align: center;
@@ -159,3 +214,5 @@ select{
     }
 
 }
+
+
