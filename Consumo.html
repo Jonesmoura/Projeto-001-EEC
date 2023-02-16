@@ -24,15 +24,23 @@
 
         <div class="dadosEntrada">
             <div class="concreto hide">
-                <p><select name="ListaEntrada" class="listaUn1" onclick="atualizarUnidades (listaUn)">
-                </select>
-            
-                <input type="number" name="num1" id="valorEntrada" placeholder="Valor de Entrada"></p>
-            
-                <p><select name="ListaSaida" class="listaUn2" onclick="atualizarUnidades (listaUn2)">
-                </select>
-            
-                <input type="number" name="num1" id="valorSaida" placeholder="Valor de Saída"></p>
+
+                <label>Fck do concreto: 
+                    <select name="fck" id="fck">
+
+                        <option value="20Mpa">20 Mpa</option>
+                        <option value="30Mpa">30 Mpa</option>
+
+                    </select>
+                </label>
+
+                <label>Altura (cm) :<input type="number" name="altura" id="alturaConcreto"></label>
+
+                <label>Largura (cm) :<input type="number" name="altura" id="larguraConcreto"></label>
+
+                <label>Profundidade (cm) :<input type="number" name="altura" id="comprConcreto"></label>
+
+
             </div>
 
             <div class="argamassa hide">
@@ -72,8 +80,12 @@
 
         <div class="ContainerBotoes">
 
-            <button id="btn" onclick="calcular ()">CALCULAR</button>
+            <button id="btn" onclick="calculoMateriaisConcreto()">CALCULAR</button>
             
+        </div>
+
+        <div class="resultados concreto hide ">
+
         </div>
 
     </div>      

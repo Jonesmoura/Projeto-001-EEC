@@ -68,10 +68,7 @@ nav > a:hover {
 
 }
 
-
-/* Criar div rigth and left para alinhamento de conteudo lado a lado*/
-
-.dadosEntrada {
+.dadosEntrada, .resultados {
     width: 50%;
     display: block;
     margin:auto;
@@ -163,6 +160,33 @@ select{
 
 }
 
+/* consumo */
+
+label{
+
+    padding: 5px;
+    width: 150px;
+    display: inline-block;
+    
+}
+
+.concreto{
+
+    text-align: center;
+
+}
+
+label > input{
+
+    width: 100px;
+
+}
+
+.resultados {
+
+    outline: auto;
+
+}
 
 /* media query - teste em celulares */
 
@@ -175,7 +199,7 @@ select{
         
     }
 
-    .valores, .dadosEntrada{
+    .valores, .dadosEntrada, .resultados{
 
         width: 95%;
         text-align: center;
@@ -214,5 +238,7 @@ select{
     }
 
 }
+
+
 
 
