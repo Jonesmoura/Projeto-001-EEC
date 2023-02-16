@@ -118,6 +118,8 @@ function calculoMateriaisConcreto(){
 
 function exibirResultado(){
 
+    divResultado.innerHTML = ''
+
     let dadosResultado = document.createElement('p')
     dadosResultado.innerHTML = `
 
