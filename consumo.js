@@ -28,6 +28,10 @@ let qtAreia
 let qtCimento
 let qtBrita
 let qtAgua
+let cimentom3
+let areiam3
+let britam3
+let aguam3
 
 
 function atualizarLista() {
@@ -69,6 +73,9 @@ function attFormulario(){
 
 function esconderForm(){
 
+    // limpa a exibição dos resultados, caso tenha sido calculado algo anteriormente
+    divResultado.innerHTML = ''
+
     for(let i = 0; i<form.length; i++){
 
         form[i].classList.add('hide')
@@ -76,6 +83,8 @@ function esconderForm(){
     }
 
 }
+
+// funções para calculo de concreto
 
 function calcularVolumeConcreto(){
 
@@ -86,33 +95,40 @@ function calcularVolumeConcreto(){
 function calculoMateriaisConcreto(){
 
     const fckConcreto = String(document.querySelector('select#fck').value).substring(0,2)
+    volumeConcreto = calcularVolumeConcreto()
 
     if(fckConcreto === '20'){
 
-        // calculo de materiais com volume e massa, conforme planilha de calculo de traço
-        volumeConcreto = calcularVolumeConcreto()
-        const cimentom3 = 447
-        const areiam3 = 645
-        const britam3 = 1092
-        const aguam3 = 177
+        //valores em kg/m³ para concreto de 20mpa
+        cimentom3 = 368
+        areiam3 = 719
+        britam3 = 1087
+        aguam3 = 174
 
-        qtAreia = (volumeConcreto * areiam3).toFixed(2)
-        qtCimento = (volumeConcreto * cimentom3).toFixed(2)
-        qtBrita = (volumeConcreto * britam3).toFixed(2)
-        qtAgua = (volumeConcreto * aguam3).toFixed(2)
-
-        console.log(`qtAreia: ${qtAreia} qtCimento: ${qtCimento} qtBrita ${qtBrita} qtAgua ${qtAgua}`)
-
-        // criar lógica para hide/unhide da div de resultados
-
+        salvarQtMateriais()
         exibirResultado()
 
+    }else if( fckConcreto === '30'){
 
-    }else if( fckConcreto === 30){
+        //valores em kg/m³ para concreto de 30mpa
+        cimentom3 = 447
+        areiam3 = 645
+        britam3 = 1092
+        aguam3 = 177
 
-        console.log(' fck 30 não calculado ainda.')
+        salvarQtMateriais()
+        exibirResultado()
 
     }
+
+}
+
+function salvarQtMateriais(){
+
+    qtAreia = (volumeConcreto * areiam3).toFixed(2)
+    qtCimento = (volumeConcreto * cimentom3).toFixed(2)
+    qtBrita = (volumeConcreto * britam3).toFixed(2)
+    qtAgua = (volumeConcreto * aguam3).toFixed(2)
 
 }
 
@@ -135,5 +151,29 @@ function exibirResultado(){
 
     divResultado.classList.remove('hide')
 
+}
+
+const colagem = document.querySelector('#colagem')
+
+// funções para calculo de argamassa
+
+function consumoArgamassa(alt,larg){
+
+    let area = alt*larg
+
+    if(colagem.value === 'simples'){
+
+        return area * 5
+
+    }else if(colagem.value ==='dupla'){
+
+        return area * 10
+
+    }
+}
+
+function ArgamassaEmSacos20kg(totalArgamassa){
+
+     return Math.ceil(totalArgamassa/20)
 
 }
