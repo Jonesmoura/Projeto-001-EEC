@@ -40,6 +40,12 @@
 
                 <label>Profundidade (cm) :<input type="number" name="altura" id="comprConcreto"></label>
 
+                <div class="ContainerBotoes">
+
+                    <button id="btn" class="style-btn" onclick="calculoMateriaisConcreto()">CALCULAR</button>
+                    
+                </div>
+
 
             </div>
 
@@ -54,9 +60,20 @@
                     </select>
                 <h3>Medidas do Ambiente</h3>
 
-                <label>Altura (m) :<input type="number" name="altura" id="alturaConcreto"></label>
+                <label>Altura (m) :<input type="number" name="altura" id="alturaAmb"></label>
 
-                <label>Largura (m) :<input type="number" name="altura" id="larguraConcreto"></label>
+                <label>Largura (m) :<input type="number" name="largura" id="larguraAmb"></label>
+
+                
+                <label>Ambiente :<input type="text" name="ambiente" id="nomeAmbiente"></label>
+
+                <div class="ContainerBotoes">
+
+                    <button id="btn" class="style-btn" onclick="exibirResultadoArgamassa()">CALCULAR</button>
+                    
+                    <button id="btn" class="style-btn-amb" onclick="limparResultado()">LIMPAR</button>
+                    
+                </div>
 
             </div>
 
@@ -81,11 +98,7 @@
 
         </div>
 
-        <div class="ContainerBotoes">
 
-            <button id="btn" onclick="calculoMateriaisConcreto()">CALCULAR</button>
-            
-        </div>
 
         <div class="resultados concreto hide ">
 

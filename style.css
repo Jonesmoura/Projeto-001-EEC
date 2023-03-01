@@ -121,14 +121,29 @@ select{
 
 }
 
-#btn{
+.style-btn{
+
     width: 100px;
     height: 40px;
     border-radius: 3px;
     background: var(--cor2);
-    border: var(--cor2); 
+    border: var(--cor2);
+    margin: 10px;
 
 }
+
+.style-btn-amb{
+
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    background: rgb(191, 211, 218);
+    border: var(--cor2);
+    margin: 10px;
+    font-size: 0.8rem;
+
+}
+
 
 #btn-clear{
 

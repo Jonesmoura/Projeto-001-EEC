@@ -33,6 +33,20 @@ let areiam3
 let britam3
 let aguam3
 
+// dados calculo argamassa
+
+const alturaAmbiente = document.querySelector('input#alturaAmb')
+const larguraAmbiente = document.querySelector('input#larguraAmb')
+const nomeAmbiente = document.querySelector('input#nomeAmbiente')
+let SomaAreaArgamassa = 0
+const areaAmbiente = function (){
+    
+    return (alturaAmbiente.value)*(larguraAmbiente.value)
+
+}
+const ambientes = []
+let contadorAmbientes = 0
+
 
 function atualizarLista() {
 
@@ -157,23 +171,64 @@ const colagem = document.querySelector('#colagem')
 
 // funções para calculo de argamassa
 
-function consumoArgamassa(alt,larg){
-
-    let area = alt*larg
+function consumoTotalArgamassa(){
 
     if(colagem.value === 'simples'){
 
-        return area * 5
+        SomaAreaArgamassa += Number((areaAmbiente() * 5 * 1.1).toFixed(2))
+        return SomaAreaArgamassa
 
     }else if(colagem.value ==='dupla'){
 
-        return area * 10
+        SomaAreaArgamassa += Number((areaAmbiente() * 10 * 1.1).toFixed(2))
+        return SomaAreaArgamassa
 
     }
-}
-
-function ArgamassaEmSacos20kg(totalArgamassa){
-
-     return Math.ceil(totalArgamassa/20)
 
 }
+
+function ArgamassaEmSacos20kg(){
+
+     return Math.ceil(SomaAreaArgamassa/20)
+
+}
+
+function ObjetoAmbiente(){
+
+    let key = nomeAmbiente.value
+    let object = {}
+    object[key] = areaAmbiente()
+    return object
+
+}
+
+function exibirResultadoArgamassa(){
+
+    contadorAmbientes ++
+    ambientes.push(
+
+        ObjetoAmbiente()
+
+    )
+
+    divResultado.innerHTML = ''
+
+    let dadosResultado = document.createElement('p')
+    dadosResultado.innerHTML = `
+
+    Consumo total: <strong>${consumoTotalArgamassa()} Kg, ou ${ArgamassaEmSacos20kg()} sacos de 20 Kg. </strong> <br>
+    
+    `
+    divResultado.appendChild(dadosResultado)
+
+    divResultado.classList.remove('hide')
+}
+
+function limparResultado(){
+
+    divResultado.innerHTML = ''
+    SomaAreaArgamassa = 0
+    
+}
+
+// criar lógica para ir contabilizando ambientes em um array - lógica desenvolvida, definir como exportar os valores para o HTML
