@@ -44,7 +44,7 @@ const areaAmbiente = function (){
     return (alturaAmbiente.value)*(larguraAmbiente.value)
 
 }
-const ambientes = []
+let ambientes = []
 let contadorAmbientes = 0
 
 
@@ -219,16 +219,38 @@ function exibirResultadoArgamassa(){
     Consumo total: <strong>${consumoTotalArgamassa()} Kg, ou ${ArgamassaEmSacos20kg()} sacos de 20 Kg. </strong> <br>
     
     `
+
     divResultado.appendChild(dadosResultado)
+    divResultado.appendChild(listarAmbientes())
+
+    
 
     divResultado.classList.remove('hide')
 }
 
 function limparResultado(){
 
+
     divResultado.innerHTML = ''
-    SomaAreaArgamassa = 0
+    ambientes = []
     
 }
 
-// criar lógica para ir contabilizando ambientes em um array - lógica desenvolvida, definir como exportar os valores para o HTML
+function listarAmbientes(){
+
+    let ambientexArea = document.createElement('p')
+    ambientexArea.innerHTML = '<strong>Lista de Ambientes/Área</strong><br>'
+
+    ambientes.forEach(
+
+        (element)=>{
+
+            ambientexArea.innerHTML += `${Object.keys(element)} Área:${Object.values(element)} m² <br> `
+
+        }
+
+    )
+    
+    return ambientexArea
+
+}
