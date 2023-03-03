@@ -172,7 +172,7 @@ const colagem = document.querySelector('#colagem')
 // funções para calculo de argamassa
 
 function consumoTotalArgamassa(){
-
+   
     if(colagem.value === 'simples'){
 
         SomaAreaArgamassa += Number((areaAmbiente() * 5 * 1.1).toFixed(2))
@@ -183,7 +183,7 @@ function consumoTotalArgamassa(){
         SomaAreaArgamassa += Number((areaAmbiente() * 10 * 1.1).toFixed(2))
         return SomaAreaArgamassa
 
-    }
+    }  
 
 }
 
@@ -204,28 +204,35 @@ function ObjetoAmbiente(){
 
 function exibirResultadoArgamassa(){
 
-    contadorAmbientes ++
-    ambientes.push(
-
-        ObjetoAmbiente()
-
-    )
-
-    divResultado.innerHTML = ''
-
-    let dadosResultado = document.createElement('p')
-    dadosResultado.innerHTML = `
-
-    Consumo total: <strong>${consumoTotalArgamassa()} Kg, ou ${ArgamassaEmSacos20kg()} sacos de 20 Kg. </strong> <br>
+    if(alturaAmbiente.value ==='' || larguraAmbiente.value==='' || nomeAmbiente.value === ''){
     
-    `
-
-    divResultado.appendChild(dadosResultado)
-    divResultado.appendChild(listarAmbientes())
-
+        alert('Preencher campos vazios')
+          
+    } else{
+        
+        contadorAmbientes ++
+        ambientes.push(
     
+            ObjetoAmbiente()
+    
+        )
+    
+        divResultado.innerHTML = ''
+    
+        let dadosResultado = document.createElement('p')
+        dadosResultado.innerHTML = `
+    
+        Consumo total: <strong>${consumoTotalArgamassa()} Kg, ou ${ArgamassaEmSacos20kg()} sacos de 20 Kg. </strong> <br>
+        
+        `
+    
+        divResultado.appendChild(dadosResultado)
+        divResultado.appendChild(listarAmbientes())
+    
+        divResultado.classList.remove('hide')
+    
+    }
 
-    divResultado.classList.remove('hide')
 }
 
 function limparResultado(){
@@ -233,7 +240,11 @@ function limparResultado(){
 
     divResultado.innerHTML = ''
     ambientes = []
-    
+    SomaAreaArgamassa = 0
+    alturaAmbiente.value = ''
+    larguraAmbiente.value = ''
+    nomeAmbiente.value = ''
+
 }
 
 function listarAmbientes(){

@@ -185,16 +185,23 @@ function atualizarUnidades(lista) {
 
 function calcular() {
 
-    if(listaUn.value !== listaUn2.value){
+    
+    if(valorEntrada.value === ''){
+
+    alert('Preencher valor a ser convertido')
+
+    }else if(listaUn.value === listaUn2.value){
+
+    alert('Selecionar unidades diferentes para realizar a conversão.')
+
+    } else{
 
     let eleObjTaxa = String(listaUn.value + listaUn2.value)
     resultado = (taxasDeConversao[eleObjTaxa] * valorEntrada.value).toFixed(5)
     valorSaida.value = resultado
 
-    } else{
-        alert('Selecionar unidades diferentes para realizar a conversão.')
     }
-
+    
 }
 
 function limparDados (){
@@ -204,7 +211,5 @@ function limparDados (){
     listaGrandeza.value =''
     valorEntrada.value = ''
     valorSaida.value=''
-
-
 
 }
