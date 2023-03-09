@@ -1,10 +1,7 @@
 const materiais = [
 
     'concreto',
-    'argamassa',
-    'nivelador_piso',
-    'tinta',
-    'massa_Corrida'
+    'argamassa'
 
 ]
 
@@ -12,10 +9,7 @@ const listaGrandeza = document.querySelector("#grandeza")
 const form = [
 
     document.querySelector('div.concreto'),
-    document.querySelector('div.argamassa'),
-    document.querySelector('div.nivelador_piso'),
-    document.querySelector('div.tinta'),
-    document.querySelector('div.massa_Corrida')
+    document.querySelector('div.argamassa')
 
 ]
 
@@ -24,14 +18,14 @@ const larguraConcreto = document.querySelector('input#larguraConcreto')
 const comprConcreto = document.querySelector('input#comprConcreto')
 const divResultado = document.querySelector('div.resultados')
 let volumeConcreto
-let qtAreia
-let qtCimento
-let qtBrita
-let qtAgua
-let cimentom3
-let areiam3
-let britam3
-let aguam3
+let qtAreiaKG
+let qtCimentoKG
+let qtBritaKG
+let qtAguaKG
+let qtAreiaLatas
+let qtBritaLatas
+let qtAguaLatas
+let qtCimentoSacos
 
 // dados calculo argamassa
 
@@ -41,7 +35,7 @@ const nomeAmbiente = document.querySelector('input#nomeAmbiente')
 let SomaAreaArgamassa = 0
 const areaAmbiente = function (){
     
-    return (alturaAmbiente.value)*(larguraAmbiente.value)
+    return ((alturaAmbiente.value)*(larguraAmbiente.value)).toFixed(2)
 
 }
 let ambientes = []
@@ -113,38 +107,42 @@ function calculoMateriaisConcreto(){
 
     if(fckConcreto === '20'){
 
-        //valores em kg/m³ para concreto de 20mpa
-        cimentom3 = 368
-        areiam3 = 719
-        britam3 = 1087
-        aguam3 = 174
-
-        salvarQtMateriais()
-        exibirResultado()
+        salvarQtMateriais(719,368,1087,174)
 
     }else if( fckConcreto === '30'){
 
-        //valores em kg/m³ para concreto de 30mpa
-        cimentom3 = 447
-        areiam3 = 645
-        britam3 = 1092
-        aguam3 = 177
-
-        salvarQtMateriais()
-        exibirResultado()
+        salvarQtMateriais(645,447,1092,177)
 
     }
 
-}
-
-function salvarQtMateriais(){
-
-    qtAreia = (volumeConcreto * areiam3).toFixed(2)
-    qtCimento = (volumeConcreto * cimentom3).toFixed(2)
-    qtBrita = (volumeConcreto * britam3).toFixed(2)
-    qtAgua = (volumeConcreto * aguam3).toFixed(2)
+    exibirResultado()
 
 }
+
+function salvarQtMateriais(areiam3, cimentom3, britam3,aguam3){
+
+    qtAreiaKG = (volumeConcreto * areiam3).toFixed(2)
+    qtCimentoKG = (volumeConcreto * cimentom3).toFixed(2)
+    qtBritaKG = (volumeConcreto * britam3).toFixed(2)
+    qtAguaKG = (volumeConcreto * aguam3).toFixed(2)
+
+    converterMateriaisLatas()
+
+}
+
+function converterMateriaisLatas(){
+
+    qtAreiaLatas = Math.ceil(qtAreiaKG / 24)
+    qtBritaLatas = Math.ceil(qtBritaKG / 20.8)
+    qtAguaLatas = Math.ceil(qtAguaKG / 16) //considerando densidade 1:1
+    qtCimentoSacos = Math.ceil(qtCimentoKG / 25)
+
+}
+// calcular consumo por latas de 18l e saco de cimento
+// informações para cálculo
+// 1 lata de areia = 24kg
+// 1 lata de brita = 20,8kg
+// 1 lata de água  = 16kg(densidade 1para1)
 
 function exibirResultado(){
 
@@ -154,11 +152,10 @@ function exibirResultado(){
     dadosResultado.innerHTML = `
 
     Volume total de concreto: <strong>${volumeConcreto} m³</strong> <br>
-    
-    Quantidade total de areia: <strong>${qtAreia} kg</strong> <br>
-    Quantidade total de cimento: <strong>${qtCimento} kg</strong> <br>
-    Quantidade total de brita: <strong>${qtBrita} kg</strong> <br>
-    Quantidade total de água: <strong>${qtAgua} kg</strong> <br>
+    Quantidade total de areia: <strong>${qtAreiaKG} kg, ou ${qtAreiaLatas} Latas </strong> <br>
+    Quantidade total de cimento: <strong>${qtCimentoKG} kg, ou ${qtCimentoSacos} sacos de 25Kg </strong> <br>
+    Quantidade total de brita: <strong>${qtBritaKG} kg, ou ${qtBritaLatas} Latas </strong> <br>
+    Quantidade total de água: <strong>${qtAguaKG} kg, ou ${qtAguaLatas} Latas </strong> <br>
     
     `
     divResultado.appendChild(dadosResultado)
@@ -176,12 +173,12 @@ function consumoTotalArgamassa(){
     if(colagem.value === 'simples'){
 
         SomaAreaArgamassa += Number((areaAmbiente() * 5 * 1.1).toFixed(2))
-        return SomaAreaArgamassa
+        return SomaAreaArgamassa.toFixed(2)
 
     }else if(colagem.value ==='dupla'){
 
         SomaAreaArgamassa += Number((areaAmbiente() * 10 * 1.1).toFixed(2))
-        return SomaAreaArgamassa
+        return SomaAreaArgamassa.toFixed(2)
 
     }  
 
