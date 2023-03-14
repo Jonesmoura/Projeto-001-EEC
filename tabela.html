@@ -17,32 +17,49 @@
 
 
         </nav>
-        <div class="conversao">
-            <h2>Selecione a grandeza:</h2>
-            <select name="grandeza" id="grandeza" onclick="limparUn ();atualizarUnidades (listaUn);atualizarUnidades (listaUn2)">
-            </select>
-            
-        </div>
 
-        <div class="left">
-            <div class="valores">
-                <p><select name="ListaEntrada" class="listaUn1" onclick="atualizarUnidades (listaUn)">
-                </select>
-            
-                <input type="number" name="num1" id="valorEntrada" placeholder="Valor de Entrada"></p>
-            
-                <p><select name="ListaSaida" class="listaUn2" onclick="atualizarUnidades (listaUn2)">
-                </select>
-            
-                <input type="number" name="num1" id="valorSaida" placeholder="Valor de Saída"></p>
-            </div>
-        </div>
+        <table class="pesoEspecifico">
+            <tr>
+                <th>Descrição</th>
+                <th>Peso Específico (Kg/m³)</th>
+            </tr>
+            <tr>
+                <td>Concreto</td>
+                <td>2500</td>
+            </tr>
+            <tr>
+                <td>Aço</td>
+                <td>7900</td>
+            </tr>
+            <tr>
+                <td>Areia</td>
+                <td>1650</td>
+            </tr>
+            <tr>
+                <td>Brita</td>
+                <td>2650</td>
+            </tr>
+            <tr>
+                <td>Gesso</td>
+                <td>950</td>
+            </tr>
+            <tr>
+                <td>Vidro</td>
+                <td>2600</td>
+            </tr>
+            <tr>
+                <td>Argamassa</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>Madeira</td>
+                <td>700</td>
+            </tr>
+        </table>
 
-        <div class="right">
+        <p>*Foram considerados valores médios, podem ocorrer variações de até 20% com base nas condições e características dos materiais.</p>
 
-            <button id="btn-calcular" onclick="calcular ()">CALCULAR</button>
-            
-        </div>
+
 
     </div>      
 

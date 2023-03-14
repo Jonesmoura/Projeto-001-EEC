@@ -203,6 +203,39 @@ label > input{
 
 }
 
+/* Formatação Tabela*/
+
+
+.pesoEspecifico{
+
+    padding: auto;
+    margin: 20px auto 10px auto;
+    text-align: center;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+
+}
+
+td,th{
+
+    border: 1px solid #0D0D0D;
+
+
+}
+
+th{
+
+    background-color: rgb(190, 190, 190);
+
+}
+
+.container > p{
+
+    text-align: center;
+
+}
+
 /* media query - teste em celulares */
 
 @media screen and (max-width:480px){
@@ -212,6 +245,15 @@ label > input{
         width: auto;
         text-align: center;
         
+    }
+
+    nav > a{
+
+        font-size: 1.1rem;
+        padding: 1px;
+        margin: 3px;
+        display: inline-block; 
+
     }
 
     .valores, .dadosEntrada, .resultados{
@@ -253,6 +295,8 @@ label > input{
     }
 
 }
+
+
 
 
 
