@@ -12,6 +12,6 @@
 
  Próximos passos:
  
- - Calculo de consumo de materiais
- - Inserção de tabela de peso específico de alguns materiais utilizados na construção civil
+ - Calculo de consumo de materiais :heavy_check_mark:
+ - Inserção de tabela de peso específico de alguns materiais utilizados na construção civil :heavy_check_mark:
  
